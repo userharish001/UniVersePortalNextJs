@@ -24,19 +24,15 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 const Colleges = [
-  { name: 'All Colleges', description: 'Get a better understanding of your traffic', href: '#', icon: AcademicCapIcon },
-  { name: 'Institutes of National Importance (INI)', description: 'Build strategic funnels that will convert', href: '#', icon: BuildingLibraryIcon },
-  { name: 'Central Universites', description: 'Build strategic funnels that will convert', href: '#', icon: BuildingOffice2Icon },
-  { name: 'State Universites', description: 'Build strategic funnels that will convert', href: '#', icon: BuildingOfficeIcon },
-  { name: 'Deemed-to-be Universities', description: 'Build strategic funnels that will convert', href: '#', icon: ChartPieIcon },
-  { name: 'Private Universities', description: 'Connect with third-party tools', href: '#', icon: UserGroupIcon },
-  { name: 'Specialized Institutions', description: 'Build strategic funnels that will convert', href: '#', icon: WrenchScrewdriverIcon },
-  { name: 'Open and Distance Learning Universities', description: 'Build strategic funnels that will convert', href: '#', icon: SignalIcon },
-  { name: 'Agricultural and Technical Universities', description: 'Build strategic funnels that will convert', href: '#', icon: BeakerIcon },
-]
-const callsToAction = [
-  { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
-  { name: 'Contact sales', href: '#', icon: PhoneIcon },
+  { name: 'All Colleges', href: '#', icon: AcademicCapIcon },
+  { name: 'Institutes of National Importance (INI)', href: '#', icon: BuildingLibraryIcon },
+  { name: 'Central Universites',  href: '#', icon: BuildingOffice2Icon },
+  { name: 'State Universites',  href: '#', icon: BuildingOfficeIcon },
+  { name: 'Deemed-to-be Universities',  href: '#', icon: ChartPieIcon },
+  { name: 'Private Universities', href: '#', icon: UserGroupIcon },
+  { name: 'Specialized Institutions', href: '#', icon: WrenchScrewdriverIcon },
+  { name: 'Open and Distance Learning Universities',  href: '#', icon: SignalIcon },
+  { name: 'Agricultural and Technical Universities', href: '#', icon: BeakerIcon },
 ]
 const Courses = [
   { id: 1, name: "Bachelor of Technology (B.Tech)", href: "/courses/btech", category: "Engineering" },
@@ -95,8 +91,8 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className="bg-gray-200">
-      <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
+    <header className="bg-gray-400">
+      <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between px-2  lg:px-8">
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
@@ -138,25 +134,12 @@ export default function Navbar() {
                       <item.icon aria-hidden="true" className="size-6 text-gray-600 group-hover:text-indigo-600" />
                     </div>
                     <div className="flex-auto">
-                      <Link href={item.href} className="block font-semibold text-gray-900">
+                      <Link href={item.href} className="block font-semibold text-gray-900 hover:text-indigo-600">
                         {item.name}
                         <span className="absolute inset-0" />
                       </Link>
-                      <p className="mt-1 text-gray-600">{item.description}</p>
                     </div>
                   </div>
-                ))}
-              </div>
-              <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
-                {callsToAction.map((item) => (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    className="flex items-center justify-center gap-x-2.5 p-3 text-sm/6 font-semibold text-gray-900 hover:bg-gray-100"
-                  >
-                    <item.icon aria-hidden="true" className="size-5 flex-none text-gray-400" />
-                    {item.name}
-                  </Link>
                 ))}
               </div>
             </PopoverPanel>
@@ -177,7 +160,7 @@ export default function Navbar() {
                     className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-50"
                   >
                     <div className="flex-auto">
-                      <Link href={item.href} className="block font-semibold text-gray-900">
+                      <Link href={item.href} className="block font-semibold text-gray-900 hover:text-indigo-600">
                         {item.name}
                         <span className="absolute inset-0" />
                       </Link>
@@ -187,27 +170,27 @@ export default function Navbar() {
               </div>
             </PopoverPanel>
           </Popover>
-          <Link href="#" className="text-sm/6 font-semibold text-gray-900">
+          <Link href="#" className="text-sm/6 font-semibold text-gray-900 hover:text-red-500">
             Admissions
           </Link>
-          <Link href="#" className="text-sm/6 font-semibold text-gray-900">
+          <Link href="#" className="text-sm/6 font-semibold text-gray-900  hover:text-red-600">
             Compare Colleges
           </Link>
-          <Link href="#" className="text-sm/6 font-semibold text-gray-900">
+          <Link href="#" className="text-sm/6 font-semibold text-gray-900  hover:text-red-600">
             Reviews
           </Link>
-          <Link href="/contact-us" className="text-sm/6 font-semibold text-gray-900">
+          <Link href="/contact-us" className="text-sm/6 font-semibold text-gray-900  hover:text-red-600">
             Contact Us
           </Link>
-          <Link href="#" className="text-sm/6 font-semibold text-gray-900">
+          <Link href="#" className="text-sm/6 font-semibold text-gray-900  hover:text-red-600">
             About Us
           </Link>
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <Link href="#" className="text-sm/6 font-semibold text-gray-900">
+          <Link href="#" className="text-sm/6 font-semibold text-gray-900  hover:text-red-600">
             Log in <span aria-hidden="true"></span>
           </Link>
-          <Link href="#" className="text-sm/6 font-semibold text-gray-900">
+          <Link href="#" className="text-sm/6 font-semibold text-gray-900  hover:text-red-600">
             Dashboard <span aria-hidden="true"></span>
           </Link>
 
@@ -235,7 +218,7 @@ export default function Navbar() {
                     <ChevronDownIcon aria-hidden="true" className="size-5 flex-none group-data-open:rotate-180" />
                   </DisclosureButton>
                   <DisclosurePanel className="mt-2 space-y-2">
-                    {[...Colleges, ...callsToAction].map((item) => (
+                    {[...Colleges].map((item) => (
                       <DisclosureButton
                         key={item.name}
                         as="a"
@@ -249,37 +232,37 @@ export default function Navbar() {
                 </Disclosure>
                 <Link
                   href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50  hover:text-red-600"
                 >
                   Courses
                 </Link>
                 <Link
                   href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50  hover:text-red-600"
                 >
                   Admissions
                 </Link>
                 <Link
                   href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50  hover:text-red-600"
                 >
                   Compare Colleges
                 </Link>
                 <Link
                   href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50  hover:text-red-600"
                 >
                   Reviews
                 </Link>
                 <Link
                   href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50  hover:text-red-600"
                 >
                   Contact Us
                 </Link>
                 <Link
                   href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50  hover:text-red-600"
                 >
                   About Us
                 </Link>
@@ -293,7 +276,7 @@ export default function Navbar() {
                 </Link>
                 <Link
                   href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50  hover:text-red-600"
                 >
                   Dashboard
                 </Link>
